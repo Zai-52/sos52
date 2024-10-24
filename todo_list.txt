@@ -1,0 +1,46 @@
+add post in profile page
+
+api should use express validator
+
+text can't copy, fix in home page
+
+remove button instead of unclickable button in header with auth.
+
+source trace and comment all code.
+
+page 324.
+remove user password using omitApi when fetching user data.(experimental)
+https://www.prisma.io/docs/orm/prisma-client/queries/excluding-fields
+
+
+page 332.
+update api refetch
+
+password not working
+
+learn about FollowedButton on Porfile and UserList
+FollowedButton  -> line 21
+//await queryClient.refetchQueries("users");
+//await queryClient.invalidateQueries(`users/${user.id}`);
+
+update api make error (eg. /notis/read/:id)
+
+read noti showing, it take time to goes off
+
+in comment page, can't like/unlike on post.
+need to add reply like noti
+need to fix duplicate noti showing
+
+page 392 feature
+
+// Frontend
+npm run dev
+
+// Backend
+npx nodemon index.js
+npx prisma studio
+
+
+
+
+

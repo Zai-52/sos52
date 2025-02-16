@@ -8,6 +8,7 @@ import {
 
 import { deepPurple, amber, cyan, teal, lime, yellow, red, grey } from "@mui/material/colors";
 
+// * For routing
 import {
     createBrowserRouter,
     RouterProvider
@@ -37,11 +38,13 @@ export function useApp() {
     return useContext(AppContext);
 }
 
-// * Create Router
+// * Router
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Template />,
+
+        // * Nested Routes (use with Outlet)
         children: [
             {
                 path: "/",

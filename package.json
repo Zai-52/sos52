@@ -17,6 +17,7 @@
     "@mui/material": "^5.16.4",
     "@uidotdev/usehooks": "^2.4.1",
     "date-fns": "^3.6.0",
+    "pg": "^8.13.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-query": "^3.39.3",

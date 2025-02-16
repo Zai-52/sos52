@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import {
     Box,
     Card,
@@ -26,16 +27,25 @@ import { useApp } from "../ThemedApp.jsx";
 export default function Item({ item, remove, primary, comment }) {
 
     const navigate = useNavigate();
-
     const { setGlobalMsg, auth } = useApp();
+    const [isSelectingText, setIsSelectingText] = useState(false);
+
+    const handleMouseUp = () => {
+        const selection = window.getSelection();
+        if (selection && selection.toString().length > 0) {
+            setIsSelectingText(true);
+        } else {
+            setIsSelectingText(false);
+        }
+    };
 
     return (
-        <Card sx={{ mb: 2 }}>
+        <Card sx={{ mb: 2 }} onMouseUp={handleMouseUp}>
 
             { primary && <Box sx={{ height: 50, bgcolor: green[500] }} />}
 
             <CardContent onClick={() => {
-                if (comment) return false;
+                if (comment || isSelectingText) return false;
                 navigate(`/comments/${item.id}`);
             }}
                 sx={{ cursor: "pointer" }}

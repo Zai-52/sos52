@@ -1,8 +1,8 @@
+// unfinished
+
 add post in profile page
 
 api should use express validator
-
-text can't copy, fix in home page
 
 remove button instead of unclickable button in header with auth.
 
@@ -40,6 +40,10 @@ npm run dev
 npx nodemon index.js
 npx prisma studio
 
+
+// finished
+
+text can't copy in item which is in home page
 
 
 

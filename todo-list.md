@@ -7,6 +7,7 @@
 - [ ] Source trace and comment all code.
 
 ### Backend
+- [ ] Comment like not work.
 - [ ] Use Express Validator for API validation.
 - [ ] Remove user password using `omitApi` when fetching user data (page 324). 
   - Reference: [Prisma Excluding Fields](https://www.prisma.io/docs/orm/prisma-client/queries/excluding-fields)

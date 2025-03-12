@@ -12,6 +12,15 @@ export async function fetchPosts() {
     return res.json();
 }
 
+// Get posts by user id
+export async function fetchUserPosts(id) {
+    const res = await fetch(`${api}/content/posts/user/${id}`);
+    if (!res.ok) {
+        throw new Error('Network response was not ok');
+    }
+    return res.json();
+}
+
 // Get following posts
 export async function fetchFollowingPosts() {
 

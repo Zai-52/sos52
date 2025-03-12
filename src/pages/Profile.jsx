@@ -2,8 +2,11 @@ import { Alert, Avatar, Box, Typography, ListItemSecondaryAction } from "@mui/ma
 import { pink } from "@mui/material/colors";
 
 import { useParams } from "react-router-dom";
-import { fetchUser } from "../libs/fetcher.js";
-import { useQuery } from "react-query";
+import { useQuery, useMutation } from "react-query";
+
+import { fetchUserPosts } from "../libs/fetcher.js";
+import { queryClient } from "../ThemedApp.jsx";
+import Item from "../components/Item.jsx";
 
 import FollowButton from "../components/FollowButton";
 
@@ -12,10 +15,20 @@ export default function Profile() {
     const { id } = useParams();
 
     const { isLoading, isError, error, data } = useQuery(
-        `users/${id}`,
-        async () => fetchUser(id)
+        [`content/posts/user/${id}`],
+        async () => fetchUserPosts(id)
     );
 
+    const remove = useMutation(async id => deletePost(id), {
+        onMutate: async id => {
+            await queryClient.cancelQueries([`content/posts/user/${id}`]);
+            await queryClient.setQueryData([`content/posts/user/${id}`], old =>
+                old.filter(item => item.id !== id)
+            );
+
+            setGlobalMsg("A post deleted");
+        },
+    });
 
     if (isError) {
         return (
@@ -48,13 +61,25 @@ export default function Profile() {
                 <Avatar sx={{ width: 100, height: 100, bgcolor: pink[500] }} />
 
                 <Box sx={{ textAlign: "center" }}>
-                    <Typography>{data.name}</Typography>
+                    <Typography>{data[0].user.name}</Typography>
                     <Typography sx={{ fontSize: "0.8em", color: "text.fade", mb: 2 }}>
-                        {data.bio}
+                        {data[0].user.bio}
                     </Typography>
-                    <FollowButton user={data} />
+                    <FollowButton user={data[0].user} />
                 </Box>
 
+            </Box>
+
+            <Box>
+                {data.map(item => {
+                    return (
+                        <Item
+                            key={item.id}
+                            item={item}
+                            remove={remove.mutate}
+                        />
+                    );
+                })}
             </Box>
 
         </Box>

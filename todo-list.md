@@ -1,10 +1,11 @@
 # To-Do List
 
 ### Frontend
-- [ ] Add post in profile page.
+- [x] Add post in profile page.
 - [ ] Replace unclickable button in header with a remove button when authenticated.
 - [x] Fix text not being copyable in items on the home page.
 - [ ] Source trace and comment all code.
+- [x] The Follow button only works when user switch tabs..
 
 ### Backend
 - [ ] Comment like not work.
@@ -27,6 +28,7 @@
 - [ ] Add reply-like notifications.
 - [ ] Fix duplicate notifications showing.
 - [ ] Page 392: Implement new feature.
+- [ ] Edit prifle.`
 
 ## Development Commands
 

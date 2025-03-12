@@ -20,6 +20,7 @@ export default function FollowButton({ user }) {
             onSuccess: async () => {
                 await queryClient.refetchQueries("users");
                 await queryClient.invalidateQueries(`users/${user.id}`);
+                await queryClient.invalidateQueries([`content/posts/user/${user.id}`]);
                 await queryClient.refetchQueries("user");
                 await queryClient.refetchQueries("search");
             }
@@ -34,6 +35,7 @@ export default function FollowButton({ user }) {
             onSuccess: async () => {
                 await queryClient.refetchQueries("users");
                 await queryClient.invalidateQueries(`users/${user.id}`);
+                await queryClient.invalidateQueries([`content/posts/user/${user.id}`]);
                 await queryClient.refetchQueries("user");
                 await queryClient.refetchQueries("search");
             }

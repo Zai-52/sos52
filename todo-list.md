@@ -28,7 +28,7 @@
 - [ ] Add reply-like notifications.
 - [ ] Fix duplicate notifications showing.
 - [ ] Page 392: Implement new feature.
-- [ ] Edit prifle.`
+- [ ] Edit prifle.
 
 ## Development Commands
 

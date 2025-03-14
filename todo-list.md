@@ -8,6 +8,7 @@
 - [x] The Follow button only works when user switch tabs.
 - [ ] Profile page bug: (like button only works when user switch tabs, delete not working).
 - [ ] Noti count only works when user switch tabs.
+- [ ] Search button can't close.
 
 
 ### Backend

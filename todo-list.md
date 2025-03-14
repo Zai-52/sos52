@@ -5,7 +5,10 @@
 - [ ] Replace unclickable button in header with a remove button when authenticated.
 - [x] Fix text not being copyable in items on the home page.
 - [ ] Source trace and comment all code.
-- [x] The Follow button only works when user switch tabs..
+- [x] The Follow button only works when user switch tabs.
+- [ ] Profile page bug: (like button only works when user switch tabs, delete not working).
+- [ ] Noti count only works when user switch tabs.
+
 
 ### Backend
 - [ ] Comment like not work.
